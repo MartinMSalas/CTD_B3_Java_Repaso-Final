@@ -1,6 +1,6 @@
 package com.ctd.b3.java.repasoFinal01;
 
-public class Factory implements Figura{
+public class Factory {
     private static Factory instancia;
 
     private Factory() {
@@ -17,7 +17,7 @@ public class Factory implements Figura{
         switch (figuraString){
             case "Circulo 1" :
                 figura = new Circulo();
-                ((Circulo) figura).setRadio(10);
+                ((Circulo) figura).setRadio(1);
                 break;
             case "Rectangulo 5 x 4" :
                 figura = new Rectangulo();
@@ -33,12 +33,11 @@ public class Factory implements Figura{
                 figura = new FiguraCompuesta();
                 ((FiguraCompuesta) figura).setNombre("Vagon");
                 break;
+            default:
+                System.out.println("No se encuentra la figura solicitada");
         }
         return figura;
     }
 
-    @Override
-    public double calcularArea() {
-        return 0;
-    }
+
 }

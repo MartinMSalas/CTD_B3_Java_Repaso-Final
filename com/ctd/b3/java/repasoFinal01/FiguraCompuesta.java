@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class FiguraCompuesta implements Figura{
     private String nombre;
     private double area;
-    private ArrayList<Figura> listaFiguras;
+    private ArrayList<Figura> listaFiguras = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
@@ -17,15 +17,19 @@ public class FiguraCompuesta implements Figura{
 
     public void agregarFigura(Figura figura){
         listaFiguras.add(figura);
+        area += figura.calcularArea();
     }
 
     @Override
     public String toString() {
         String listaString ="";
+
         for (Figura figura: listaFiguras
              ) {
             listaString += figura.toString() + '\n';
         }
+
+
         String respuesta = "FiguraCompuesta" + '\n' +
                 "Nombre: " + nombre + '\n' +
                 "Area: " + area + '\n' +

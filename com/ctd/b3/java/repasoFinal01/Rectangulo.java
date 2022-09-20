@@ -33,7 +33,7 @@ public class Rectangulo implements Figura{
     public String toString() {
         return "Rectangulo" + '\n' +
                 "Alto: " + alto + '\n' +
-                "Largo=" + largo + '\n' +
-                "Area=" + area ;
+                "Largo: " + largo + '\n' +
+                "Area: " + area ;
     }
 }
